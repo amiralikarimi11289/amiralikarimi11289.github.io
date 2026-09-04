@@ -1,61 +1,32 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ROYA | فروشگاه پوشاک</title>
+<!doctype html><html lang="fa" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROYA | فروشگاه آنلاین پوشاک</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#faf8f5;color:#181818}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee;padding:18px 6%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:900;letter-spacing:2px}.nav{display:flex;gap:24px}.nav a{color:#222;text-decoration:none;font-size:14px}
-.cart{border:0;background:#181818;color:white;padding:11px 17px;border-radius:25px;cursor:pointer}
-.hero{padding:70px 6%;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;background:linear-gradient(135deg,#f1e7df,#fff)}
-.hero h1{font-size:clamp(38px,6vw,76px);line-height:1.05;margin:10px 0}.hero p{font-size:17px;color:#666;line-height:2}
-.cta{display:inline-block;background:#181818;color:#fff;padding:14px 24px;border-radius:30px;text-decoration:none;margin-top:12px}
-.hero-img{min-height:430px;border-radius:28px;background:linear-gradient(145deg,#7b2638,#d9a18d 65%,#eee);display:flex;align-items:end;justify-content:center;font-size:110px}
-section{padding:60px 6%}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.title h2{font-size:30px;margin:0}.title span{color:#888}
-.filters{display:flex;gap:10px;margin-bottom:25px;flex-wrap:wrap}.filter{border:1px solid #ddd;background:#fff;padding:9px 16px;border-radius:22px;cursor:pointer}.filter.active{background:#181818;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 22px #00000008}.pic{height:280px;display:flex;align-items:center;justify-content:center;font-size:85px}.p1{background:#eaded5}.p2{background:#d9dfe0}.p3{background:#e7d8bc}.p4{background:#ddd3dc}.info{padding:16px}.info h3{margin:0 0 9px;font-size:16px}.price{font-weight:800}.buy{margin-top:13px;width:100%;padding:11px;border:0;background:#181818;color:#fff;border-radius:12px;cursor:pointer}
-.about{background:#181818;color:#fff;border-radius:28px;padding:45px}.about p{color:#ccc;line-height:2}
-footer{padding:35px 6%;background:#111;color:#aaa;text-align:center}
-@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}}
-@media(max-width:500px){.grid{grid-template-columns:1fr}.hero-img{min-height:280px}}
-</style>
-</head>
-<body>
-<header><div class="logo">ROYA</div><nav class="nav"><a href="#shop">فروشگاه</a><a href="#new">جدیدها</a><a href="#about">درباره ما</a></nav><button class="cart" onclick="showCart()">سبد خرید (<span id="count">0</span>)</button></header>
-
-<main>
-<section class="hero" id="new">
-<div><small>کالکشن پاییز ۱۴۰۵</small><h1>استایل تو،<br>قانون تو.</h1><p>پوشاک مینیمال و خوش‌دوخت برای استایل روزمره؛ ساده، شیک و متفاوت.</p><a class="cta" href="#shop">مشاهده محصولات</a></div>
-<div class="hero-img">🧥</div>
-</section>
-
-<section id="shop">
-<div class="title"><h2>محصولات محبوب</h2><span>ارسال سریع به سراسر ایران</span></div>
-<div class="filters"><button class="filter active" onclick="filter('all',this)">همه</button><button class="filter" onclick="filter('men',this)">مردانه</button><button class="filter" onclick="filter('women',this)">زنانه</button><button class="filter" onclick="filter('accessory',this)">اکسسوری</button></div>
-<div class="grid" id="products"></div>
-</section>
-
-<section id="about"><div class="about"><h2>ROYA</h2><p>یک فروشگاه پوشاک مدرن با تمرکز روی طراحی تمیز، کیفیت خوب و تجربه خرید ساده. این نسخه نمایشی آماده است تا محصولات و قیمت‌های واقعی خودت را جایگزین کنی.</p></div></section>
-</main>
-<footer>© ۱۴۰۵ ROYA — تمام حقوق محفوظ است</footer>
-
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f7f5f2;color:#161616}.top{background:#111;color:#fff;text-align:center;padding:9px;font-size:12px}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e9e5e0;padding:15px 5%;display:flex;align-items:center;gap:25px}.logo{font-size:28px;font-weight:900;letter-spacing:3px}.nav{display:flex;gap:22px;flex:1}.nav a{text-decoration:none;color:#222;font-size:14px}.actions{display:flex;gap:9px}.icon{border:1px solid #ddd;background:#fff;border-radius:50%;width:42px;height:42px;cursor:pointer}
+.hero{max-width:1400px;margin:auto;padding:48px 5%;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.hero h1{font-size:clamp(42px,6vw,78px);line-height:1.02;margin:16px 0}.hero p{color:#666;line-height:2;max-width:520px}.btn{display:inline-block;background:#111;color:#fff;text-decoration:none;border:0;padding:14px 24px;border-radius:28px;cursor:pointer}.heroVisual{height:500px;border-radius:32px;background:linear-gradient(145deg,#ddd2c8,#8b5e4b);display:flex;align-items:center;justify-content:center;font-size:180px}
+.wrap{max-width:1400px;margin:auto;padding:55px 5%}.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.sectionHead h2{font-size:31px;margin:0}.search{background:#fff;border:1px solid #e9e5e0;padding:13px 17px;border-radius:14px;width:min(340px,100%)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}.filter{border:1px solid #ddd;background:#fff;padding:10px 17px;border-radius:24px;cursor:pointer}.filter.active{background:#111;color:#fff}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px #0000000a;position:relative}.pic{height:310px;display:flex;align-items:center;justify-content:center;font-size:105px;position:relative}.p1{background:#ded5ce}.p2{background:#d9dee0}.p3{background:#e6d9bd}.p4{background:#d9d1dc}.badge{position:absolute;top:12px;right:12px;background:#111;color:#fff;padding:6px 10px;border-radius:14px;font-size:11px}.info{padding:17px}.info h3{font-size:16px;margin:0 0 10px}.stars{font-size:12px;margin-bottom:10px}.price{font-weight:900}.old{color:#999;text-decoration:line-through;font-size:12px;margin-right:7px;font-weight:normal}.buy{margin-top:14px;width:100%;padding:12px;border:0;border-radius:12px;background:#111;color:#fff;cursor:pointer}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}.feature{background:#fff;border:1px solid #e9e5e0;padding:25px;border-radius:18px}.feature b{display:block;margin-bottom:8px}.feature span{color:#777;font-size:13px}.about{background:#111;color:#fff;border-radius:30px;padding:45px}.about p{color:#bbb;line-height:2;max-width:750px}footer{background:#111;color:#aaa;padding:35px 5%;margin-top:40px}.footerFlex{display:flex;justify-content:space-between}
+.cartPanel{position:fixed;inset:0;background:#0007;z-index:50;display:none}.cartBox{position:absolute;right:0;top:0;height:100%;width:min(430px,92%);background:#fff;padding:25px;overflow:auto}.close{float:left;border:0;background:none;font-size:25px;cursor:pointer}.cartBox h2{margin-top:45px}.cartItem{border-bottom:1px solid #eee;padding:15px 0;display:flex;justify-content:space-between}.total{font-weight:900;font-size:19px;margin:25px 0}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(100px);background:#111;color:#fff;padding:13px 20px;border-radius:25px;z-index:70;transition:.3s}.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}.heroVisual{height:360px}.features{grid-template-columns:1fr}}@media(max-width:520px){.grid{grid-template-columns:1fr}.sectionHead{display:block}.search{margin-top:15px;width:100%}.heroVisual{height:280px;font-size:110px}.footerFlex{display:block}}
+</style></head><body>
+<div class="top">🚚 ارسال رایگان برای سفارش‌های بالای ۲ میلیون تومان</div>
+<header><div class="logo">ROYA</div><nav class="nav"><a href="#shop">فروشگاه</a><a href="#features">خدمات</a><a href="#about">درباره ما</a></nav><div class="actions"><button class="icon" onclick="focusSearch()">⌕</button><button class="icon" onclick="openCart()">🛒 <span id="count">0</span></button></div></header>
+<section class="hero"><div><small>کالکشن جدید • پاییز ۱۴۰۵</small><h1>استایل تو،<br>قانون تو.</h1><p>پوشاک مدرن با طراحی مینیمال و انتخاب‌های خاص برای استایل روزمره.</p><a class="btn" href="#shop">خرید کالکشن</a></div><div class="heroVisual">🧥</div></section>
+<section class="wrap" id="shop"><div class="sectionHead"><div><h2>محصولات منتخب</h2><span style="color:#888;font-size:13px">انتخاب‌های محبوب ROYA</span></div><input id="search" class="search" placeholder="جستجوی محصول..." oninput="render()"></div>
+<div class="filters"><button class="filter active" data-cat="all">همه</button><button class="filter" data-cat="men">مردانه</button><button class="filter" data-cat="women">زنانه</button><button class="filter" data-cat="accessory">اکسسوری</button></div><div class="grid" id="products"></div>
+<div class="features" id="features"><div class="feature">🚚 <b>ارسال سریع</b><span>ارسال به سراسر ایران</span></div><div class="feature">↩️ <b>ضمانت بازگشت</b><span>امکان مرجوعی طبق شرایط فروشگاه</span></div><div class="feature">🔒 <b>خرید امن</b><span>تجربه خرید ساده و مطمئن</span></div></div></section>
+<section class="wrap" id="about"><div class="about"><h2>درباره ROYA</h2><p>ROYA یک فروشگاه پوشاک مدرن با تمرکز روی کیفیت، طراحی تمیز و تجربه خرید ساده است.</p></div></section>
+<footer><div class="footerFlex"><div><b style="color:#fff;font-size:20px">ROYA</b><p>فروشگاه آنلاین پوشاک</p></div><div><b style="color:#fff">ارتباط با ما</b><p>Instagram • WhatsApp • Telegram</p></div></div><div>© ۱۴۰۵ ROYA — تمام حقوق محفوظ است</div></footer>
+<div class="cartPanel" id="panel" onclick="if(event.target===this)closeCart()"><div class="cartBox"><button class="close" onclick="closeCart()">×</button><h2>سبد خرید</h2><div id="cartItems"></div><div class="total" id="total">مجموع: ۰ تومان</div><button class="btn" style="width:100%" onclick="checkout()">ثبت سفارش</button></div></div><div class="toast" id="toast">به سبد خرید اضافه شد ✓</div>
 <script>
 const items=[
-{name:"هودی اورسایز زغالی",price:"۱,۴۹۰,۰۰۰ تومان",cat:"men",emoji:"🧥",cl:"p1"},
-{name:"تیشرت مینیمال سفید",price:"۶۹۰,۰۰۰ تومان",cat:"men",emoji:"👕",cl:"p2"},
-{name:"کت کوتاه کرم",price:"۲,۲۹۰,۰۰۰ تومان",cat:"women",emoji:"🧥",cl:"p3"},
-{name:"شال بافت نرم",price:"۵۹۰,۰۰۰ تومان",cat:"women",emoji:"🧣",cl:"p4"},
-{name:"کلاه بیسبالی کلاسیک",price:"۴۹۰,۰۰۰ تومان",cat:"accessory",emoji:"🧢",cl:"p2"},
-{name:"شلوار کارگو مشکی",price:"۱,۱۹۰,۰۰۰ تومان",cat:"men",emoji:"👖",cl:"p4"},
-{name:"کیف دوشی مینیمال",price:"۸۹۰,۰۰۰ تومان",cat:"accessory",emoji:"👜",cl:"p3"},
-{name:"پیراهن لینن",price:"۱,۳۹۰,۰۰۰ تومان",cat:"women",emoji:"👗",cl:"p1"}];
-let cart=0;
-function render(cat="all"){document.getElementById("products").innerHTML=items.filter(x=>cat==="all"||x.cat===cat).map(x=>`<article class="card"><div class="pic ${x.cl}">${x.emoji}</div><div class="info"><h3>${x.name}</h3><div class="price">${x.price}</div><button class="buy" onclick="add()">افزودن به سبد</button></div></article>`).join("")}
-function filter(cat,b){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(cat)}
-function add(){cart++;document.getElementById("count").textContent=cart}
-function showCart(){alert(cart?`تعداد ${cart} کالا در سبد خرید شماست.`:"سبد خرید خالی است.")}
-render();
-</script>
-</body></html>
+[1,"هودی اورسایز زغالی",1490000,1690000,"men","🧥","p1","پرفروش"],[2,"تیشرت مینیمال سفید",690000,790000,"men","👕","p2","جدید"],[3,"کت کوتاه کرم",2290000,2590000,"women","🧥","p3","ویژه"],[4,"شال بافت نرم",590000,0,"women","🧣","p4",""],[5,"کلاه بیسبالی کلاسیک",490000,0,"accessory","🧢","p2",""],[6,"شلوار کارگو مشکی",1190000,1390000,"men","👖","p4","تخفیف"],[7,"کیف دوشی مینیمال",890000,0,"accessory","👜","p3",""],[8,"پیراهن لینن",1390000,1590000,"women","👗","p1","جدید"]];
+let active="all",cart=[];const toman=n=>n.toLocaleString("fa-IR")+" تومان";
+function render(){let q=document.getElementById("search").value.trim().toLowerCase();document.getElementById("products").innerHTML=items.filter(x=>(active==="all"||x[4]===active)&&x[1].toLowerCase().includes(q)).map(x=>`<article class="card"><div class="pic ${x[6]}">${x[7]?`<span class="badge">${x[7]}</span>`:""}${x[5]}</div><div class="info"><h3>${x[1]}</h3><div class="stars">★★★★★</div><div class="price">${toman(x[2])} ${x[3]?`<span class="old">${toman(x[3])}</span>`:""}</div><button class="buy" onclick="add(${x[0]})">افزودن به سبد خرید</button></div></article>`).join("")||"<p>محصولی پیدا نشد.</p>"}
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");active=b.dataset.cat;render()});
+function add(id){cart.push(id);document.getElementById("count").textContent=cart.length;document.getElementById("toast").classList.add("show");setTimeout(()=>document.getElementById("toast").classList.remove("show"),1300)}
+function openCart(){document.getElementById("panel").style.display="block";let c={},total=0;cart.forEach(id=>c[id]=(c[id]||0)+1);document.getElementById("cartItems").innerHTML=Object.entries(c).map(([id,n])=>{let x=items.find(a=>a[0]==id);total+=x[2]*n;return `<div class="cartItem"><span>${x[1]} × ${n}</span><b>${toman(x[2]*n)}</b></div>`}).join("")||"<p>سبد خرید خالی است.</p>";document.getElementById("total").textContent="مجموع: "+toman(total)}
+function closeCart(){document.getElementById("panel").style.display="none"}function checkout(){alert("برای پرداخت آنلاین باید درگاه پرداخت به سایت متصل شود.")}function focusSearch(){document.getElementById("search").focus();document.getElementById("search").scrollIntoView({behavior:"smooth",block:"center"})}render();
+</script></body></html>
