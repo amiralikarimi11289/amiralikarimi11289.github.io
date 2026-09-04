@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROYA | فروشگاه پوشاک</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#faf8f5;color:#181818}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee;padding:18px 6%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}.nav{display:flex;gap:24px}.nav a{color:#222;text-decoration:none;font-size:14px}
+.cart{border:0;background:#181818;color:white;padding:11px 17px;border-radius:25px;cursor:pointer}
+.hero{padding:70px 6%;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center;background:linear-gradient(135deg,#f1e7df,#fff)}
+.hero h1{font-size:clamp(38px,6vw,76px);line-height:1.05;margin:10px 0}.hero p{font-size:17px;color:#666;line-height:2}
+.cta{display:inline-block;background:#181818;color:#fff;padding:14px 24px;border-radius:30px;text-decoration:none;margin-top:12px}
+.hero-img{min-height:430px;border-radius:28px;background:linear-gradient(145deg,#7b2638,#d9a18d 65%,#eee);display:flex;align-items:end;justify-content:center;font-size:110px}
+section{padding:60px 6%}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.title h2{font-size:30px;margin:0}.title span{color:#888}
+.filters{display:flex;gap:10px;margin-bottom:25px;flex-wrap:wrap}.filter{border:1px solid #ddd;background:#fff;padding:9px 16px;border-radius:22px;cursor:pointer}.filter.active{background:#181818;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 22px #00000008}.pic{height:280px;display:flex;align-items:center;justify-content:center;font-size:85px}.p1{background:#eaded5}.p2{background:#d9dfe0}.p3{background:#e7d8bc}.p4{background:#ddd3dc}.info{padding:16px}.info h3{margin:0 0 9px;font-size:16px}.price{font-weight:800}.buy{margin-top:13px;width:100%;padding:11px;border:0;background:#181818;color:#fff;border-radius:12px;cursor:pointer}
+.about{background:#181818;color:#fff;border-radius:28px;padding:45px}.about p{color:#ccc;line-height:2}
+footer{padding:35px 6%;background:#111;color:#aaa;text-align:center}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.nav{display:none}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}.hero-img{min-height:280px}}
+</style>
+</head>
+<body>
+<header><div class="logo">ROYA</div><nav class="nav"><a href="#shop">فروشگاه</a><a href="#new">جدیدها</a><a href="#about">درباره ما</a></nav><button class="cart" onclick="showCart()">سبد خرید (<span id="count">0</span>)</button></header>
+
+<main>
+<section class="hero" id="new">
+<div><small>کالکشن پاییز ۱۴۰۵</small><h1>استایل تو،<br>قانون تو.</h1><p>پوشاک مینیمال و خوش‌دوخت برای استایل روزمره؛ ساده، شیک و متفاوت.</p><a class="cta" href="#shop">مشاهده محصولات</a></div>
+<div class="hero-img">🧥</div>
+</section>
+
+<section id="shop">
+<div class="title"><h2>محصولات محبوب</h2><span>ارسال سریع به سراسر ایران</span></div>
+<div class="filters"><button class="filter active" onclick="filter('all',this)">همه</button><button class="filter" onclick="filter('men',this)">مردانه</button><button class="filter" onclick="filter('women',this)">زنانه</button><button class="filter" onclick="filter('accessory',this)">اکسسوری</button></div>
+<div class="grid" id="products"></div>
+</section>
+
+<section id="about"><div class="about"><h2>ROYA</h2><p>یک فروشگاه پوشاک مدرن با تمرکز روی طراحی تمیز، کیفیت خوب و تجربه خرید ساده. این نسخه نمایشی آماده است تا محصولات و قیمت‌های واقعی خودت را جایگزین کنی.</p></div></section>
+</main>
+<footer>© ۱۴۰۵ ROYA — تمام حقوق محفوظ است</footer>
+
+<script>
+const items=[
+{name:"هودی اورسایز زغالی",price:"۱,۴۹۰,۰۰۰ تومان",cat:"men",emoji:"🧥",cl:"p1"},
+{name:"تیشرت مینیمال سفید",price:"۶۹۰,۰۰۰ تومان",cat:"men",emoji:"👕",cl:"p2"},
+{name:"کت کوتاه کرم",price:"۲,۲۹۰,۰۰۰ تومان",cat:"women",emoji:"🧥",cl:"p3"},
+{name:"شال بافت نرم",price:"۵۹۰,۰۰۰ تومان",cat:"women",emoji:"🧣",cl:"p4"},
+{name:"کلاه بیسبالی کلاسیک",price:"۴۹۰,۰۰۰ تومان",cat:"accessory",emoji:"🧢",cl:"p2"},
+{name:"شلوار کارگو مشکی",price:"۱,۱۹۰,۰۰۰ تومان",cat:"men",emoji:"👖",cl:"p4"},
+{name:"کیف دوشی مینیمال",price:"۸۹۰,۰۰۰ تومان",cat:"accessory",emoji:"👜",cl:"p3"},
+{name:"پیراهن لینن",price:"۱,۳۹۰,۰۰۰ تومان",cat:"women",emoji:"👗",cl:"p1"}];
+let cart=0;
+function render(cat="all"){document.getElementById("products").innerHTML=items.filter(x=>cat==="all"||x.cat===cat).map(x=>`<article class="card"><div class="pic ${x.cl}">${x.emoji}</div><div class="info"><h3>${x.name}</h3><div class="price">${x.price}</div><button class="buy" onclick="add()">افزودن به سبد</button></div></article>`).join("")}
+function filter(cat,b){document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(cat)}
+function add(){cart++;document.getElementById("count").textContent=cart}
+function showCart(){alert(cart?`تعداد ${cart} کالا در سبد خرید شماست.`:"سبد خرید خالی است.")}
+render();
+</script>
+</body></html>
